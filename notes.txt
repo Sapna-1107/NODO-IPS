@@ -1,0 +1,54 @@
+For these, find our what are their RA, Decl. (J2000) and then precess their coordinates to 
+the epoch of observations. Also derive (cf. Gaussian fitting), their x, y positions measured 
+on the CCD frame. 
+
+And then, try to find the most simple and accurate coordinate transformations between 
+all these data (linear, quadratic, ...). Let us hope that :
+RA - RA_0 = K_1 * (x-x_0),
+Dec - Dec_0 = K_2 * (y-y_0)
+will be the most adequate transformation. Please note that x might be replaced with y, 
+but this is a detail.
+
+Then see in the papers I have attached to which best projection in corresponds to (CAR???).
+
+As I said before, the NODO data which are stored on aeos3 may be found in the folders:
+/home/jeansurdej/NODO (for folders 14.48 ... 14.71, B, I, R, V, W) and
+/home/jeansurdej/data1/NODO (for folders 14.72 ... 14.82)
+
+###################
+Important link:  https://phys.libretexts.org/Bookshelves/Astronomy__Cosmology/Book%3A_Celestial_Mechanics_(Tatum)/11%3A_Photographic_Astrometry/11.02%3A_Standard_Coordinates_and_Plate_Constants
+
+
+The proposed plate solution would be valid if we were observing with a long and narrow CCD,
+in one shot, which is not at all the case. It is more as if were were observing with a 1-D CCD,
+oriented North-South.
+
+In our case, the right ascension (RA) of a transiting object is thus equal to the local sidereal time (LST),
+and since the latter runs continuously, we expect it to be linearly related the x position of the object
+recorded on our long movies. Same for the declination (DE), it should be a linear function of the y
+coordinate.
+
+In an ideal world, we should have:
+x - x_0 = f . (RA . cos(DE) - RA_0 . cos(DE_0)) and y - y_0 = g . (DE - DE_0),
+with the parameters f and g (to be determined), being in principle a same and unique parameter
+(i.e. f=g)
+
+But the world is never ideal and I would rather expect (to be discussed) that perhaps, instead of
+linear relations of the type:
+
+RA . cos(DE) - RA_0 . cos(DE_0) = (x - x_0)/f  and DE - DE_0 = (y - y_0)/g,
+
+and DE - DE_0 = (y - y_0)/g ,
+
+we might have to deal with second order relations of the type
+ 
+RA . cos(DE) - RA_0 . cos(DE_0) = (x - x_0)/f + h.(x - x_0)^2/f^2 + i (y-y_0)/g
+
+and DE - DE_0 = (y - y_0)/g + j.(y - y_0)^2/g^2, and also with f .neq. g.
+
+It could be that the relations will turn out to be more simple ... maybe more complicated.
+
+Everyone should feel free to intervene ... and to carry out experiments with the data.
+
+The only way to know which approach will be the best is to test the different types 
+of relations and see what works the best.
